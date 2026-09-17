@@ -20,6 +20,6 @@ public class PlayerPlatform : MonoBehaviour
         }
 
         currentPlatform = platform;
-        Debug.Log("current platform: " + platform.PlatformNumber);
+        //Debug.Log("current platform: " + platform.PlatformNumber);
     }
 }

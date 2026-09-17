@@ -1,8 +1,6 @@
-using Unity.Burst.Intrinsics;
 using UnityEngine;
-using UnityEngine.tvOS;
 
-public class Tree : MonoBehaviour
+public class TreeObject : MonoBehaviour
 {
     private Platform platform;
 
