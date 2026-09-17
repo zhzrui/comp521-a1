@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12556694c98699a488975347374ef1b0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4238173091577331260}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12556694c98699a488975347374ef1b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1774176279428236626}
   m_SourcePrefab: {fileID: 100100000, guid: 12556694c98699a488975347374ef1b0, type: 3}
 --- !u!1 &7453561266240631098 stripped
 GameObject:
@@ -108,3 +111,16 @@ CapsuleCollider:
   m_Height: 16.73
   m_Direction: 2
   m_Center: {x: -0.07413722, y: 0.1019123, z: 6.445762}
+--- !u!114 &1774176279428236626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453561266240631098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9533cfca4d1234b8fb228f098a55b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tree
+  platform: {fileID: 0}
