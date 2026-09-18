@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        Debug.Log("ON FIRE CALLED");
+        //Debug.Log("ON FIRE CALLED");
 
         if (value.isPressed)
         {

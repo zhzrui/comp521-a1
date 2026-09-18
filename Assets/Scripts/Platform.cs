@@ -35,6 +35,21 @@ public class Platform : MonoBehaviour
     // spawn trigger
     public void PlayerEntered()
     {
+        // platform 4
+        if (platformNumber == 4)
+        {
+            
+            // check for game manager
+            GameManager gameManager = FindFirstObjectByType<GameManager>();
+            if (gameManager != null)
+            {
+                gameManager.Win();
+            }
+            
+            return;
+        }
+
+        // platforms 1-3
         if (!pelletSpawned)
         {
             //Debug.Log("spawning pellets");
@@ -47,12 +62,7 @@ public class Platform : MonoBehaviour
             botSpawned = true;
         }
 
-        // platform 4
-        if (platformNumber == 4)
-        {
-            FindFirstObjectByType<GameManager>().Win();
-            return;
-        }
+
     }
 
     // random spawn

@@ -4,6 +4,16 @@ public class PlatformTrigger : MonoBehaviour
 {
     [SerializeField] private Platform platform;
 
+    private void Awake()
+    {
+        platform = GetComponentInParent<Platform>();
+
+        if (platform == null)
+        {
+            Debug.LogError("no platform parent");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
 

@@ -18,10 +18,10 @@ public class TreeObject : MonoBehaviour
     {
         platform = GetComponentInParent<Platform>();
 
-        if (platform == null)
-        {
-            Debug.LogError("tree - platform not found");
-        }
+        //if (platform == null)
+        //{
+        //    Debug.LogError("tree - platform not found");
+        //}
     }
 
 }
