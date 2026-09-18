@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PelletTrigger : MonoBehaviour
+public class PlatformTrigger : MonoBehaviour
 {
     [SerializeField] private Platform platform;
 
@@ -17,10 +17,6 @@ public class PelletTrigger : MonoBehaviour
             {
                 //Debug.Log("found playerplatform");
                 playerPlatform.EnterPlatform(platform);
-            }
-            else
-            {
-                Debug.Log("could not find playerplatform");
             }
 
             platform.PlayerEntered();

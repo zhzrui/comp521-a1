@@ -22,9 +22,24 @@ public class FoodPellet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("collected pellet");
+            PlayerShooting shooting = other.GetComponent<PlayerShooting>();
+            
+            if (shooting != null)
+            {
+                shooting.AddProjectiles();
+                //Debug.Log("shooting - collected pellet");
+            }
+
+            platform.RemoveFoodPellet(this);
+
             Destroy(gameObject);
         }
     }
 
+
+    public void ConsumedByBot()
+    {
+        platform.RemoveFoodPellet(this);
+        Destroy(gameObject);
+    }
 }

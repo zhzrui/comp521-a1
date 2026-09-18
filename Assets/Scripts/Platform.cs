@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,13 +11,25 @@ public class Platform : MonoBehaviour
 
     private bool pelletSpawned = false; // default not spawned until triggered
     private List<FoodPellet> foodPellets = new List<FoodPellet>();
-    
+
+    [SerializeField] private GameObject botPrefab;
+    [SerializeField] private Transform botSpawn;
+    private bool botSpawned = false;
+
+
     public int PlatformNumber
     {
         get
         { 
             return platformNumber;
         }
+    }
+    public List<FoodPellet> FoodPellets
+    {
+        get
+        {
+            return foodPellets;
+        }            
     }
 
     // spawn trigger
@@ -28,12 +41,24 @@ public class Platform : MonoBehaviour
             SpawnFoodPellets();
             pelletSpawned = true;
         }
+        if (!botSpawned)
+        {
+            StartCoroutine(SpawnBotDelay());
+            botSpawned = true;
+        }
+
+        // platform 4
+        if (platformNumber == 4)
+        {
+            FindFirstObjectByType<GameManager>().Win();
+            return;
+        }
     }
 
     // random spawn
     public void SpawnFoodPellets()
     {
-        //Debug.Log("SpawnFoodPellets() running");
+        Debug.Log("SpawnFoodPellets() running");
         
         for (int i = 0; i < 8; i++)
         {
@@ -59,6 +84,17 @@ public class Platform : MonoBehaviour
 
         return new Vector3(x, y, z);
     }
+    public void RemoveFoodPellet(FoodPellet pellet)
+    {
+        foodPellets.Remove(pellet);
+    }
 
+    private IEnumerator SpawnBotDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        GameObject botObj = Instantiate(botPrefab, botSpawn.position, botSpawn.rotation);
+        Bot bot = botObj.GetComponent<Bot>();
+        bot.Initialize(this);
+    }
 
 }
