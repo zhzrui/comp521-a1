@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa93082dd9a9db4c92be3c9eea7e687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bot
-  moveSpeed: 1.5
+  botSpeed: 3
